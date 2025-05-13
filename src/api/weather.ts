@@ -63,6 +63,16 @@ class WeatherAPI {
 
     return this.fetchData<GeocodingResponse[]>(url);
   }
+
+  // Function to search locations
+  async searchLocations(query: string): Promise<GeocodingResponse[]> {
+    const url = this.createURL(`${API_CONFIG.GEO}/direct`, {
+      q: query,
+      limit: '5',
+    });
+
+    return this.fetchData<GeocodingResponse[]>(url);
+  }
 }
 
 // new instance of WeatherAPI

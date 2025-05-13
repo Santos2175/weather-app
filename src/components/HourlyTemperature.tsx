@@ -97,6 +97,7 @@ const HourlyTemperature = ({ data }: IHourlyTemperatureProps) => {
                 stroke='#64748b'
                 strokeWidth={2}
                 dot={false}
+                strokeDasharray='5 5'
               />
             </LineChart>
           </ResponsiveContainer>

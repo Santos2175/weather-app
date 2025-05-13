@@ -3,6 +3,7 @@ import { useTheme } from '@/context/theme-provider';
 import ThemeToggle from './theme-toggle';
 import Logo1 from '@/assets/logo.png';
 import Logo2 from '@/assets/logo2.png';
+import CitySearch from './CitySearch';
 
 const Header = () => {
   const { theme } = useTheme();
@@ -18,7 +19,7 @@ const Header = () => {
         </Link>
 
         <div className='flex gap-4'>
-          <p>City Search</p>
+          <CitySearch />
           <ThemeToggle />
         </div>
       </div>
