@@ -19,7 +19,7 @@ const CurrentWeather = ({ data, locationName }: ICurrentWeatherProps) => {
   return (
     <Card className='overflow-hidden'>
       <CardContent className='p-6'>
-        <div className='flex gap-6 md:flex-row'>
+        <div className='grid gap-6 md:grid-cols-2'>
           {/* left part */}
           <div className='space-y-4'>
             {/* left part first */}

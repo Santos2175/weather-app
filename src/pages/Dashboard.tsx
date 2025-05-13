@@ -116,7 +116,7 @@ const Dashboard = () => {
 
       <div className='grid gap-6'>
         {/* Current and hourly weather */}
-        <div className='flex flex-col lg:flex-row gap-4'>
+        <div className='flex flex-col xl:flex-row gap-4'>
           {/* Current Weather */}
           <CurrentWeather
             data={weatherQuery.data}
