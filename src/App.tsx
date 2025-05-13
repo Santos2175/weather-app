@@ -5,6 +5,7 @@ import Layout from '@/components/Layout.tsx';
 import { ThemeProvider } from '@/context/theme-provider';
 import Dashboard from '@/pages/Dashboard';
 import City from '@/pages/City';
+import { Toaster } from 'sonner';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -29,6 +30,7 @@ function App() {
                 <Route path='/city/:cityName' element={<City />} />
               </Routes>
             </Layout>
+            <Toaster richColors />
           </ThemeProvider>
         </BrowserRouter>
         <ReactQueryDevtools initialIsOpen={false} />

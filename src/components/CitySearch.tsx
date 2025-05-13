@@ -9,12 +9,13 @@ import {
 } from '@/components/ui/command';
 import { Button } from './ui/button';
 import { useState } from 'react';
-import { Clock, Loader2, Search, XCircle } from 'lucide-react';
+import { Clock, Loader2, Search, Star, XCircle } from 'lucide-react';
 import { useSearchLocations } from '@/hooks/use-weather';
 import { CommandSeparator } from 'cmdk';
 import { useNavigate } from 'react-router';
 import { useSearchHistory } from '@/hooks/use-search-history';
 import { format } from 'date-fns';
+import { useFavorites } from '@/hooks/use-favorite';
 
 const CitySearch = () => {
   const [open, setOpen] = useState(false);
@@ -22,6 +23,7 @@ const CitySearch = () => {
   const navigate = useNavigate();
 
   const { data: locations, isLoading } = useSearchLocations(query);
+  const { favorites } = useFavorites();
   const { history, addToHistory, clearHistory } = useSearchHistory();
 
   const handleSelect = (cityData: string) => {
@@ -63,9 +65,29 @@ const CitySearch = () => {
             )}
 
             {/* Favourites */}
-            <CommandGroup heading='Favourites'>
-              <CommandItem>Favourites</CommandItem>
-            </CommandGroup>
+            {favorites.length > 0 && (
+              <CommandGroup heading='Favourites'>
+                {favorites.map((city) => (
+                  <CommandItem
+                    key={city.id}
+                    value={`${city.lat}|${city.lon}|${city.name}|${city.country}`}
+                    onSelect={handleSelect}>
+                    <Star className='mr-2 h-4 w-4 text-yellow-500' />
+                    <span>{city.name}</span>
+
+                    {city.state && (
+                      <span className='text-sm text-muted-foreground'>
+                        , {city.state}
+                      </span>
+                    )}
+
+                    <span className='text-sm text-muted-foreground'>
+                      , {city.country}
+                    </span>
+                  </CommandItem>
+                ))}
+              </CommandGroup>
+            )}
 
             {/* Recent Searches */}
             {history.length > 0 && (
