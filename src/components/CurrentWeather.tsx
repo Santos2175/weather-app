@@ -19,13 +19,13 @@ const CurrentWeather = ({ data, locationName }: ICurrentWeatherProps) => {
   return (
     <Card className='overflow-hidden'>
       <CardContent className='p-6'>
-        <div className='grid gap-6 md:grid-cols-2'>
+        <div className='flex gap-6 md:flex-row'>
           {/* left part */}
           <div className='space-y-4'>
             {/* left part first */}
             {/* location name and country */}
             <div className='space-y-2'>
-              <div className='flex items-end gap-1'>
+              <div className='flex items-center'>
                 <h2 className='text-2xl font-bold tracking-tighter'>
                   {locationName?.name}
                 </h2>
@@ -83,7 +83,7 @@ const CurrentWeather = ({ data, locationName }: ICurrentWeatherProps) => {
                 <Wind className='h-4 w-4 text-blue-500' />
                 <div className='space-y-0.4'>
                   <p className='text-sm font-medium'>Wind Speed</p>
-                  <p className='text-sm text-muted-foreground'>{speed}</p>
+                  <p className='text-sm text-muted-foreground'>{speed} m/s</p>
                 </div>
               </div>
             </div>
@@ -91,7 +91,7 @@ const CurrentWeather = ({ data, locationName }: ICurrentWeatherProps) => {
 
           {/* right part */}
           <div className='flex flex-col items-center justify-center'>
-            <div className='relative flex aspect-square w-full w-max-[200px] items-center justify-center'>
+            <div className='relative flex aspect-square w-full max-w-[200px] items-center justify-center'>
               <img
                 src={`https://openweathermap.org/img/wn/${currentWeather.icon}@4x.png`}
                 alt={currentWeather.description}
