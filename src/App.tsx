@@ -1,11 +1,11 @@
 import { BrowserRouter, Routes, Route } from 'react-router';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import Layout from '@/components/Layout.tsx';
 import { ThemeProvider } from '@/context/theme-provider';
 import Dashboard from '@/pages/Dashboard';
 import City from '@/pages/City';
 import { Toaster } from 'sonner';
+// import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -33,7 +33,9 @@ function App() {
             <Toaster richColors />
           </ThemeProvider>
         </BrowserRouter>
-        <ReactQueryDevtools initialIsOpen={false} />
+
+        {/* For Development Environment */}
+        {/* <ReactQueryDevtools initialIsOpen={false} /> */}
       </QueryClientProvider>
     </>
   );
