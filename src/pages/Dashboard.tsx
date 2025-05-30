@@ -123,6 +123,7 @@ const Dashboard = () => {
           <CurrentWeather
             data={weatherQuery.data}
             locationName={locationName}
+            className='xl:max-w-[45vw]'
           />
           {/* Hourly Temperature */}
           <HourlyTemperature data={forecastQuery.data} />

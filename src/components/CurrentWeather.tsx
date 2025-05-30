@@ -5,9 +5,14 @@ import { ArrowDown, ArrowUp, Droplets, Wind } from 'lucide-react';
 interface ICurrentWeatherProps {
   data: WeatherData;
   locationName?: GeocodingResponse;
+  className?: string;
 }
 
-const CurrentWeather = ({ data, locationName }: ICurrentWeatherProps) => {
+const CurrentWeather = ({
+  data,
+  locationName,
+  className,
+}: ICurrentWeatherProps) => {
   const {
     weather: [currentWeather],
     main: { temp, feels_like, temp_min, temp_max, humidity },
@@ -17,7 +22,7 @@ const CurrentWeather = ({ data, locationName }: ICurrentWeatherProps) => {
   const formatTemp = (temp: number) => `${Math.round(temp)}°`;
 
   return (
-    <Card className='overflow-hidden xl:max-w-[45vw]'>
+    <Card className={`overflow-hidden ${className}`}>
       <CardContent className='p-6'>
         <div className='grid gap-6 md:grid-cols-2'>
           {/* left part */}
