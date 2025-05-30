@@ -72,18 +72,19 @@ A sleek, modern weather application built with React, TypeScript, and Vite. This
    npm install
    ```
 
-3. Make a ```.env``` file with the variables inside that of ```.env.example```
+3. Make a `.env` file with the variables inside that of `.env.example`
+
    ```bash
    VITE_OPENWEATHER_API_KEY=your_api_key_from_openweather_account
    ```
 
-5. Start the development server:
+4. Start the development server:
 
    ```bash
    npm run dev
    ```
 
-6. Open [http://localhost:5173](http://localhost:5173) in your browser.
+5. Open [http://localhost:5173](http://localhost:5173) in your browser.
 
 ### Building for Production
 
