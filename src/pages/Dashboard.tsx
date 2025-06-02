@@ -123,14 +123,14 @@ const Dashboard = () => {
           <CurrentWeather
             data={weatherQuery.data}
             locationName={locationName}
-            className='xl:max-w-[45vw]'
+            className='xl:max-w-[42vw]'
           />
           {/* Hourly Temperature */}
           <HourlyTemperature data={forecastQuery.data} />
         </div>
 
         {/* Weather details and forecast */}
-        <div className='grid gap-6 md:grid-cols-2 items-start'>
+        <div className='grid gap-6 lg:grid-cols-2 items-start'>
           {/* Weather details */}
           <WeatherDetails data={weatherQuery.data} />
           {/* Weather Forecast */}

@@ -28,12 +28,12 @@ const FavoriteCityTablet = ({
     <div
       onClick={handleClick}
       role='button'
-      className='relative flex min-w-[200px] cursor-pointer items-center gap-3 rounded-lg border bg-card p-4 pr-8 shadow-sm transition-all hover:shadow-lg'
+      className='relative flex min-w-[200px] cursor-pointer items-center gap-3 rounded-lg border bg-card p-2 sm:p-4 pr-4 sm:pr-8 shadow-sm transition-all hover:shadow-lg'
       tabIndex={0}>
       <Button
         variant={'ghost'}
         size={'icon'}
-        className='absolute right-1 top-1 h-6 w-6 rounded-full p-0 hover:text-destructive-foreground group-hover:opacity-100'
+        className='absolute -right-0.5 -top-0.5 sm:right-1 sm:top-1 h-6 w-6 rounded-full p-0 hover:text-destructive-foreground group-hover:opacity-100'
         onClick={(e) => {
           e.stopPropagation();
           onRemove(id);
@@ -48,7 +48,7 @@ const FavoriteCityTablet = ({
         </div>
       ) : weather ? (
         <>
-          <div className='flex items-center gap-2'>
+          <div className='flex items-center sm:gap-2'>
             <img
               src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}.png`}
               alt={weather.weather[0].description}
@@ -64,10 +64,10 @@ const FavoriteCityTablet = ({
           </div>
 
           <div className='ml-auto text-right'>
-            <p className='text-xl font-bold'>
+            <p className='text-lg sm:text-xl font-bold'>
               {Math.round(weather.main.temp)}°
             </p>
-            <p className='text-xs capitalize text-muted-foreground'>
+            <p className='text-[11px] sm:text-xs capitalize text-muted-foreground'>
               {weather.weather[0].description}
             </p>
           </div>
